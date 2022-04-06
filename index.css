@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  
+  html {
+    min-height: 100vh;
+  }
+  
+  body {
+    background-color: #999999;
+  }
+  
+  .main-title {
+    color: #460061;
+    font-family: "Heroes Assemble Italic", sans-serif;
+    text-align: center;
+    font-size: 6em;
+  }
+  
+  .game-area {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    margin: 50px;
+    justify-content: center;
+    perspective: 500px;
+  }
+  
+  .card {
+    position: relative;
+    width: 125px;
+    height: 180px;
+  }
+  
+  .card-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    border-width: 1px;
+    border: solid;
+    transition: transform 500ms ease-in-out;
+    backface-visibility: hidden;
+  }
+  
+  .card-back {
+    background-color: #460061;
+    border-color: orange;
+    transform: rotateY(0);
+  }
+  
+  .card-back:hover .avengers-logo {
+    transform: scale(1);
+  }
+  
+  .card-front {
+    background-color: #c0bfbf;
+    border-color: orange;
+    transform: rotateY(180deg);
+  }
+  
+  .hulk {
+    background: #FFFFFF;
+    background: -moz-radial-gradient(center, #FFFFFF 0%, #00B411 50%, #007F0C 100%);
+    background: -webkit-radial-gradient(center, #FFFFFF 0%, #00B411 50%, #007F0C 100%);
+    background: radial-gradient(ellipse at center, #FFFFFF 0%, #00B411 50%, #007F0C 100%);
+    border-color: orange;
+    transform: rotateY(180deg);
+  }
+  
+  .blackwidow {
+    background: #FFFFFF;
+    background: -moz-radial-gradient(center, #FFFFFF 0%, #FF0901 50%, #000000 100%);
+    background: -webkit-radial-gradient(center, #FFFFFF 0%, #FF0901 50%, #000000 100%);
+    background: radial-gradient(ellipse at center, #FFFFFF 0%, #FF0901 50%, #000000 100%);
+    border-color: orange;
+    transform: rotateY(180deg);
+  }
+  
+  .captainmarvel {
+    background: #FFFFFF;
+    background: -moz-radial-gradient(center, #FFFFFF 0%, #010AFF 50%, #FF0101 100%);
+    background: -webkit-radial-gradient(center, #FFFFFF 0%, #010AFF 50%, #FF0101 100%);
+    background: radial-gradient(ellipse at center, #FFFFFF 0%, #010AFF 50%, #FF0101 100%);
+    border-color: orange;
+    transform: rotateY(180deg);
+  }
+  
+  .captainamerica {
+    background: #FFFFFF;
+    background: -moz-radial-gradient(center, #FFFFFF 0%, #061FFF 50%, #061FFF 100%);
+    background: -webkit-radial-gradient(center, #FFFFFF 0%, #061FFF 50%, #061FFF 100%);
+    background: radial-gradient(ellipse at center, #FFFFFF 0%, #061FFF 50%, #061FFF 100%);
+    border-color: orange;
+    transform: rotateY(180deg);
+  }
+  
+  .ironman {
+    background: #FFF601;
+    background: -moz-radial-gradient(center, #FFF601 0%, #F92F21 50%, #BE0101 100%);
+    background: -webkit-radial-gradient(center, #FFF601 0%, #F92F21 50%, #BE0101 100%);
+    background: radial-gradient(ellipse at center, #FFF601 0%, #F92F21 50%, #BE0101 100%);
+    border-color: orange;
+    transform: rotateY(180deg);
+  }
+  
+  .hawkeye {
+    background: #FFFFFF;
+    background: -moz-radial-gradient(center, #FFFFFF 0%, #6F06F9 50%, #8004BE 100%);
+    background: -webkit-radial-gradient(center, #FFFFFF 0%, #6F06F9 50%, #8004BE 100%);
+    background: radial-gradient(ellipse at center, #FFFFFF 0%, #6F06F9 50%, #8004BE 100%);
+    border-color: orange;
+    transform: rotateY(180deg);
+  }
+  
+  .scarletwitch {
+    background: #FFFFFF;
+    background: -moz-radial-gradient(center, #FFFFFF 0%, #F903E9 50%, #FF1901 100%);
+    background: -webkit-radial-gradient(center, #FFFFFF 0%, #F903E9 50%, #FF1901 100%);
+    background: radial-gradient(ellipse at center, #FFFFFF 0%, #F903E9 50%, #FF1901 100%);
+    border-color: orange;
+    transform: rotateY(180deg);
+  }
+  
+  .thor {
+    background: #FFFFFF;
+    background: -moz-radial-gradient(center, #FFFFFF 0%, #AAAAAA 50%, #7F7E7E 100%);
+    background: -webkit-radial-gradient(center, #FFFFFF 0%, #AAAAAA 50%, #7F7E7E 100%);
+    background: radial-gradient(ellipse at center, #FFFFFF 0%, #AAAAAA 50%, #7F7E7E 100%);
+    border-color: orange;
+    transform: rotateY(180deg);
+  }
+  
+  .card.visible .card-back {
+    transform: rotateY(-180deg);
+  }
+  
+  .card.visible .card-front {
+    transform: rotateY(0);
+  }
+  
+  .avengers-logo {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    transform: scale(0.9);
+  }
+  
+  .avenger {
+    position: absolute;
+    width: 120px;
+    height: 170px;
+    transform: scale(0.9);
+  }
+  
+  .overlay-text {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #460061;
+    background-color: rgba(255, 196, 0, 0.74);
+    font-family: "Heroes Assemble", sans-serif;
+    font-size: 6em;
+    cursor: pointer;
+  }
+  
+  .overlay-text.visible {
+    display: flex;
+  }
